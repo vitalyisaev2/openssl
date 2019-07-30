@@ -598,12 +598,16 @@ const EVP_MD *X_EVP_md_null() {
 	return EVP_md_null();
 }
 
-const EVP_MD *X_EVP_md5() {
-	return EVP_md5();
+const EVP_MD *X_EVP_md2() {
+	return EVP_md2();
 }
 
 const EVP_MD *X_EVP_md4() {
 	return EVP_md4();
+}
+
+const EVP_MD *X_EVP_md5() {
+	return EVP_md5();
 }
 
 const EVP_MD *X_EVP_ripemd160() {
@@ -628,6 +632,46 @@ const EVP_MD *X_EVP_sha384() {
 
 const EVP_MD *X_EVP_sha512() {
 	return EVP_sha512();
+}
+
+const EVP_MD *X_EVP_sha512_224() {
+	return EVP_sha512_224();
+}
+
+const EVP_MD *X_EVP_sha512_256() {
+	return EVP_sha512_224();
+}
+
+const EVP_MD *X_EVP_sha3_224() {
+	return EVP_sha3_224();
+}
+
+const EVP_MD *X_EVP_sha3_256() {
+	return EVP_sha3_256();
+}
+
+const EVP_MD *X_EVP_sha3_384() {
+	return EVP_sha3_384();
+}
+
+const EVP_MD *X_EVP_sha3_512() {
+	return EVP_sha3_512();
+}
+
+const EVP_MD *X_EVP_blake2b512() {
+	return EVP_blake2b512();
+}
+
+const EVP_MD *X_EVP_blake2s256() {
+	return EVP_blake2s256();
+}
+
+const EVP_MD *X_EVP_shake128() {
+	return EVP_shake128();
+}
+
+const EVP_MD *X_EVP_shake256() {
+	return EVP_shake256();
 }
 
 int X_EVP_MD_size(const EVP_MD *md) {
