@@ -24,7 +24,7 @@ type SHA256Hash struct {
 func NewSHA256Hash() (*SHA256Hash, error) { return NewSHA256HashWithEngine(nil) }
 
 func NewSHA256HashWithEngine(e *Engine) (*SHA256Hash, error) {
-	dc, err := NewDigestComputerWithEngine(e, Digest_SHA256)
+	dc, err := NewDigestComputerWithEngine(e, EVP_SHA256)
 	if err != nil {
 		return nil, err
 	}

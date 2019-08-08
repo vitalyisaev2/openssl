@@ -24,7 +24,7 @@ type MD4Hash struct {
 func NewMD4Hash() (*MD4Hash, error) { return NewMD4HashWithEngine(nil) }
 
 func NewMD4HashWithEngine(e *Engine) (*MD4Hash, error) {
-	dc, err := NewDigestComputerWithEngine(e, Digest_MD4)
+	dc, err := NewDigestComputerWithEngine(e, EVP_MD4)
 	if err != nil {
 		return nil, err
 	}

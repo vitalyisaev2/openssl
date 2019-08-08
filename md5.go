@@ -24,7 +24,7 @@ type MD5Hash struct {
 func NewMD5Hash() (*MD5Hash, error) { return NewMD5HashWithEngine(nil) }
 
 func NewMD5HashWithEngine(e *Engine) (*MD5Hash, error) {
-	dc, err := NewDigestComputerWithEngine(e, Digest_MD5)
+	dc, err := NewDigestComputerWithEngine(e, EVP_MD5)
 	if err != nil {
 		return nil, err
 	}

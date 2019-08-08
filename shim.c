@@ -598,8 +598,28 @@ const EVP_MD *X_EVP_md_null() {
 	return EVP_md_null();
 }
 
+const EVP_MD *X_EVP_blake2b512() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010000fL
+	return EVP_blake2b512();
+#else
+	return NULL;
+#endif
+}
+
+const EVP_MD *X_EVP_blake2s256() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010000fL
+	return EVP_blake2s256();
+#else
+	return NULL;
+#endif
+}
+
 const EVP_MD *X_EVP_md2() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010000fL
 	return EVP_md2();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_md4() {
@@ -614,12 +634,12 @@ const EVP_MD *X_EVP_ripemd160() {
 	return EVP_ripemd160();
 }
 
-const EVP_MD *X_EVP_sha224() {
-	return EVP_sha224();
-}
-
 const EVP_MD *X_EVP_sha1() {
 	return EVP_sha1();
+}
+
+const EVP_MD *X_EVP_sha224() {
+	return EVP_sha224();
 }
 
 const EVP_MD *X_EVP_sha256() {
@@ -635,43 +655,71 @@ const EVP_MD *X_EVP_sha512() {
 }
 
 const EVP_MD *X_EVP_sha512_224() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_sha512_224();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_sha512_256() {
-	return EVP_sha512_224();
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
+	return EVP_sha512_256();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_sha3_224() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_sha3_224();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_sha3_256() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_sha3_256();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_sha3_384() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_sha3_384();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_sha3_512() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_sha3_512();
-}
-
-const EVP_MD *X_EVP_blake2b512() {
-	return EVP_blake2b512();
-}
-
-const EVP_MD *X_EVP_blake2s256() {
-	return EVP_blake2s256();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_shake128() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_shake128();
+#else
+	return NULL;
+#endif
 }
 
 const EVP_MD *X_EVP_shake256() {
+#if OPENSSL_VERSION_NUMBER >= 0x1010100fL
 	return EVP_shake256();
+#else
+	return NULL;
+#endif
+}
+
+const EVP_MD *X_EVP_whirlpool() {
+	return EVP_whirlpool();
 }
 
 int X_EVP_MD_size(const EVP_MD *md) {

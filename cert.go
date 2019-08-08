@@ -26,24 +26,6 @@ import (
 	"unsafe"
 )
 
-type EVP_MD int
-
-const (
-	EVP_NULL      EVP_MD = iota
-	EVP_MD5
-	EVP_MD4
-	EVP_SHA
-	EVP_SHA1
-	EVP_DSS
-	EVP_DSS1
-	EVP_MDC2
-	EVP_RIPEMD160
-	EVP_SHA224
-	EVP_SHA256
-	EVP_SHA384
-	EVP_SHA512
-)
-
 // X509_Version represents a version on an x509 certificate.
 type X509_Version int
 
